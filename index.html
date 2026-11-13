@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dental Clinic</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#FFFBF7}
+.hero{display:flex;justify-content:space-between;align-items:center;padding:60px 80px;background:white}
+.hero-left h1{font-size:50px}
+.hero-left h1 span{color:#FF7E54}
+.hero-left p{color:#666;margin:15px 0;max-width:450px}
+.btn{background:#FF7E54;color:white;padding:12px 25px;border:none;border-radius:6px;font-weight:bold;cursor:pointer}
+.hero-right img{width:380px;height:380px;border-radius:50%;object-fit:cover;border:12px solid #FFE9E0}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;padding:20px 80px;background:#FFFBF7}
+.card{background:#FF7E54;color:white;padding:25px 15px;border-radius:10px;text-align:center}
+.card b{font-size:18px}
+.card p{font-size:13px;margin-top:8px;opacity:0.9}
+
+/* Form kosam kotha style */
+.form-box{display:none;max-width:500px;margin:30px auto;background:white;padding:30px;border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,0.1)}
+.form-box h2{color:#FF7E54;margin-bottom:15px;text-align:center}
+.form-box input, .form-box select{width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:6px;font-size:15px}
+.form-box button{width:100%;margin-top:10px}
+.success{display:none;text-align:center;color:green;font-weight:bold;margin-top:15px}
+</style>
+</head>
+<body>
+
+<div class="hero">
+<div class="hero-left">
+<h1>Dental <span>Clinic</span></h1>
+<p>Professional dental care for your whole family. We provide best services with modern technology and expert doctors.</p>
+<p>📞 9876543210 | 📧 dental@clinic.com</p><br>
+<button class="btn" onclick="showForm()">Book Appointment</button>
+</div>
+<div class="hero-right">
+<img src="https://i.pravatar.cc/400?img=5" alt="Doctor">
+</div>
+</div>
+
+<div class="cards">
+<div class="card"><b>🦷 Cleaning</b><p>Professional teeth cleaning and polishing</p></div>
+<div class="card"><b>😁 Whitening</b><p>Brighten your smile in one visit</p></div>
+<div class="card"><b>🦷 Implants</b><p>Permanent tooth replacement solution</p></div>
+<div class="card"><b>👨‍⚕️ Checkup</b><p>Regular dental checkup for family</p></div>
+</div>
+
+<!-- Appointment Form - Button kotte vasthundi -->
+<div class="form-box" id="myForm">
+<h2>Book Appointment</h2>
+<input type="text" id="name" placeholder="Nee Peru - Ex: Ramesh">
+<input type="text" id="phone" placeholder="Phone Number - Ex: 9876543210">
+<select id="service">
+<option>Cleaning</option>
+<option>Whitening</option>
+<option>Implants</option>
+<option>Checkup</option>
+</select>
+<button class="btn" onclick="bookNow()">Confirm Booking</button>
+<p class="success" id="successMsg">✅ Appointment Booked! Maamu, mimmalni call chestham!</p>
+</div>
+
+<script>
+function showForm(){
+  document.getElementById("myForm").style.display = "block";
+  document.getElementById("myForm").scrollIntoView({behavior:"smooth"});
+}
+function bookNow(){
+  var name = document.getElementById("name").value;
+  var phone = document.getElementById("phone").value;
+  if(name == "" || phone == ""){
+    alert("Mowa, Peru mariyu Phone Number ivvu!");
+  } else {
+    document.getElementById("successMsg").style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>
